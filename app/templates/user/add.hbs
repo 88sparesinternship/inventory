@@ -1,0 +1,42 @@
+
+<html>
+	<head>
+		<title>Anjriiit</title>
+	</head>
+	<body>
+		<!-- <div class="topnav">
+  			<a class="active" href="#home">Home</a>
+  			<a href="#news">News</a>
+  			<a href="#contact">Contact</a>
+  			<a href="#about">About</a>
+  			<input id="myInput" type="text" placeholder="Search.." class="car">
+		</div> -->
+		<form class="container" {{action "addNewUser" user on="submit"}} style="margin-top: 5%">
+		    <center>
+		    	<div>{{input value=user.name size="30"}}</div><br>
+			    <div>{{input value=user.value size="30"}}</div><br>
+			    <div>
+			    	<button type="submit" class="btn btn-success">Add</button>
+			    </div>		
+		    </center>    
+		</form>
+		<br>
+		<div class="container">
+			<table>
+				<tr>
+					<th>nama</th>
+					<th>value</th>
+					<th colspan="2">action</th>
+				</tr>
+				{{#each model as |item|}}					
+					<tr>
+						<td>{{item.name}}</td>
+						<td>{{item.value}}</td>
+						<td><button {{action "deleteUser" item}} class="btn btn-danger">Delete</button></td>
+						<td><button {{action "editUser" item}} class="btn btn-warning">Edit</button></td>
+					</tr>
+				{{/each}}
+			</table>
+		</div>
+	</body>
+</html>
