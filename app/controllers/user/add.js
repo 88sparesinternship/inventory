@@ -21,6 +21,6 @@ export default Controller.extend({
                 del.get('isDeleted');
                 del.save();
             });
-        }
+        },
     }
 });

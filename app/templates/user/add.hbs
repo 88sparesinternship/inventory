@@ -2,8 +2,8 @@
 
 		<form {{action "addNewUser" user on="submit"}} style="margin-top: 5%">
 		    <center>
-		    	<div class="form-group">Name : {{input value=user.name size="30" }}</div><br>
-			    <div class="form-group">Value : {{input value=user.value size="30"}}</div><br>
+		    	<div class="form-group">Name : {{input required=true value=user.name size="30" }}</div><br>
+			    <div class="form-group">Value : {{input required=true value=user.value size="30"}}</div><br>
 			    <div>
 			    	<button type="submit" class="btn btn-success">Add</button>
 			    </div>		
@@ -12,19 +12,20 @@
 		<br>
 		<form>
         <div>
-			<table>
+			<table id="myUL">
 				<tr>
-					<th>nama</th>
+					<th>name</th>
 					<th>value</th>
-					<th colspan="2">action</th>
+					<th>date created</th>
+					<th>action</th>
 				</tr>
 				{{#each model as |item|}}					
 					<tr>
 						<td>{{item.name}}</td>
 						<td>{{item.value}}</td>
-						<td><button {{action "deleteUser" item}} class="btn btn-danger">Delete</button></td>
+						<td>{{format-date item.created}} </td>
 						<td>
-							{{!--{{#link-to 'user.edit' item.id}}Edit{{/link-to}}--}}
+							<button {{action "deleteUser" item}} class="btn btn-danger">Delete</button>
 							{{#link-to 'user.edit' item.id tagName='button' class="btn btn-warning" }}Edit{{/link-to}}
 						</td>
 					</tr>
@@ -32,5 +33,3 @@
 			</table>
 		</div>
 </form>
-		
-		
