@@ -24,7 +24,8 @@
 						<td>{{item.value}}</td>
 						<td><button {{action "deleteUser" item}} class="btn btn-danger">Delete</button></td>
 						<td>
-							{{#link-to 'user.edit' tagName='button' class="btn btn-warning" }}Edit{{/link-to}}
+							{{!--{{#link-to 'user.edit' item.id}}Edit{{/link-to}}--}}
+							{{#link-to 'user.edit' item.id tagName='button' class="btn btn-warning" }}Edit{{/link-to}}
 						</td>
 					</tr>
 				{{/each}}
