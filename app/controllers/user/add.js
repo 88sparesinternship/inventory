@@ -14,27 +14,13 @@ export default Controller.extend({
             newUser.save(),
             this.set('user',{})
         },
+        
         deleteUser(item){
             this.store.findRecord('user', item.id , { backgroundReload: false }).then(function(del) {
                 del.deleteRecord();
                 del.get('isDeleted');
                 del.save();
             });
-        },
-        // yang dibawah boleh dihapus
-        // Upper(item){
-            // this.store.findRecord('user', item.id , { backgroundReload: false }).then(function(up) {
-            //     up.set('user', {name} );
-            // })
-            // this.store.findRecord('person', 1).then(function(tyrion) {
-            //     // ...after the record has loaded
-            //     tyrion.set('firstName', 'Yollo');
-            // });
-        // }
-        // editUser(item){
-        //     this.store.findRecord('user', item.id).then(function(editkuy) {
-        //         editkuy.setProperties({ name: '' , value: '' });
-        //     });
-        // }
+        }
     }
 });
