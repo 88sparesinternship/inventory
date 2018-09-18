@@ -1,0 +1,32 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Navbar</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav">
+      {{#link-to 'user.add'  }}Tambah Barang{{/link-to}}
+    </ul>
+  </div>
+</nav>        
+
+<div class="container">
+	<table>
+		<tr>
+			<th>name</th>
+			<th>value</th>
+			<th>date created</th>
+			<th>action</th>
+		</tr>
+			{{#each model as |item|}}					
+				<tr>
+					<td>{{item.name}}</td>
+					<td>{{item.value}}</td>
+					<td>{{format-date item.created}} </td>
+					<td>
+						{{#link-to "borrowing" tagName="button" class="btn btn-success"}}{{/link-to}}
+					</td>
+				</tr>
+			{{/each}}
+	</table>
+</div>
