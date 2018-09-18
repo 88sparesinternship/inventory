@@ -1,5 +1,15 @@
-
-
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Navbar</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav">
+      {{#link-to 'user.borrow'}}Peminjaman Barang{{/link-to}}
+    </ul>
+  </div>
+</nav>
+	<div class="container">
 		<form {{action "addNewUser" user on="submit"}} style="margin-top: 5%">
 		    <center>
 		    	<div class="form-group">Name : {{input required=true value=user.name size="30" }}</div><br>
@@ -11,25 +21,26 @@
 		</form>
 		<br>
 		<form>
-        <div>
-			<table id="myUL">
-				<tr>
-					<th>name</th>
-					<th>value</th>
-					<th>date created</th>
-					<th>action</th>
-				</tr>
-				{{#each model as |item|}}					
+			<div>
+				<table>
 					<tr>
-						<td>{{item.name}}</td>
-						<td>{{item.value}}</td>
-						<td>{{format-date item.created}} </td>
-						<td>
-							<button {{action "deleteUser" item}} class="btn btn-danger">Delete</button>
-							{{#link-to 'user.edit' item.id tagName='button' class="btn btn-warning" }}Edit{{/link-to}}
-						</td>
+						<th>name</th>
+						<th>value</th>
+						<th>date created</th>
+						<th>action</th>
 					</tr>
-				{{/each}}
-			</table>
-		</div>
-</form>
+					{{#each model as |item|}}					
+						<tr>
+							<td>{{item.name}}</td>
+							<td>{{item.value}}</td>
+							<td>{{format-date item.created}} </td>
+							<td>
+								<button {{action "deleteUser" item}} class="btn btn-danger">Delete</button>
+								{{#link-to 'user.edit' item.id tagName='button' class="btn btn-warning" }}Edit{{/link-to}}
+							</td>
+						</tr>
+					{{/each}}
+				</table>
+			</div>
+		</form>
+	</div>
