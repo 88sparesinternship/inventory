@@ -7,5 +7,10 @@ export default DS.Model.extend({
         defaultValue: function(){
             return new Date();
         }
-    })    
+    }),
+    updated     : DS.attr('string',{
+        defaultValue: function(){
+            return new Date();
+        }
+    })  
 });

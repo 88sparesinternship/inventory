@@ -7,14 +7,16 @@ export default Controller.extend({
 
             var name = this.get('model.name');
             var value = this.get('model.value');
+            var updated = this.get('model.created');
             
             this.store.findRecord('user', id ).then(function(edit){
                 edit.set('name',name);
                 edit.set('value',value);
+                edit.set('updated', new Date(updated));
 
                 edit.save();
 
-                self.transitionTo('user.add');
+                self.transitionToRoute('user.add');
             })
         }
     }
