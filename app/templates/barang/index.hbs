@@ -1,0 +1,17 @@
+<form {{action 'addBarang' barang on='submit'}}>
+    nama barang : {{input value=barang.nama_barang}} <br>
+    stok : {{input value=barang.stok}}
+    <button type="submit">add</button>
+</form>
+<table>
+    <tr>
+        <th>Nama Barang</th>
+        <th>Stok</th>
+    </tr>
+    {{#each model as |item|}}
+    <tr>
+        <td>{{item.nama_barang}}</td>
+        <td>{{item.stok}}</td>
+    </tr>
+    {{/each}}
+</table>
