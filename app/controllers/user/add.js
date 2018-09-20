@@ -18,7 +18,11 @@ export default Controller.extend({
         deleteUser(item){
             this.store.findRecord('user', item.id , { backgroundReload: false }).then(function(del) {
                 del.deleteRecord();
+<<<<<<< HEAD
                 // del.get('isDeleted');
+=======
+                del.get('isDeleted');
+>>>>>>> 2af68276764a7d42cb52b256c304a4c856753e1b
                 del.save();
             });
         },

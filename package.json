@@ -47,7 +47,11 @@
   "engines": {
     "node": "^4.5 || 6.* || >= 7.*"
   },
+<<<<<<< HEAD
   "dependencies": {
     "npm": "^6.4.1"
   }
+=======
+  "dependencies": {}
+>>>>>>> 2af68276764a7d42cb52b256c304a4c856753e1b
 }
