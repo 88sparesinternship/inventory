@@ -15,4 +15,17 @@ export default Service.extend({
             })
             return newBarang.save()
         },
+
+    lihatKaryawan(id){
+        return this.get('store').findAll('karyawan')
+    },
+    addKaryawan(karyawan){
+        let newKaryawan = this.get('store').createRecord('karyawan',{
+            nama_karyawan       : karyawan.nama_karyawan,
+            
+        })
+        return newKaryawan.save()
+    
+    },
+   
 });
