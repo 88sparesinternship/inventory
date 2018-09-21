@@ -10,6 +10,10 @@ export default Controller.extend({
         addKaryawan(karyawan){
             this.get('barangService').addKaryawan(karyawan).then(res => res),
             this.set('karyawan',{})
+        },
+        deleteKaryawan(karyawan){
+            this.get('barangService').deleteKaryawan(karyawan)
+            
         }
     }
 });

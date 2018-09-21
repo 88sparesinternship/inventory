@@ -16,7 +16,7 @@ export default Service.extend({
             return newBarang.save()
         },
 
-    lihatKaryawan(id){
+    lihatKaryawan(){
         return this.get('store').findAll('karyawan')
     },
     addKaryawan(karyawan){
@@ -26,6 +26,14 @@ export default Service.extend({
         })
         return newKaryawan.save()
     
+    },
+    deleteKaryawan(id){
+        this.get('store').findRecord('karyawan', id).then(function(del){
+            del.deleteRecord();
+            del.get('isDeleted');
+
+            del.save();
+        })
     },
    
 });
