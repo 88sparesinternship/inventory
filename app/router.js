@@ -7,11 +7,13 @@ const Router = EmberRouter.extend({
 });
 
 Router.map(function() {
-  this.route('user', function() {
-    this.route('add');
-    this.route('edit',{path: '/edit/:user_id'});
-    this.route('borrow');
+  this.route('user', function() {});
+  this.route('barang', function() {});
+
+  this.route('karyawan', function() {
+    this.route('addkaryawan');
   });
+  this.route('barang', function() {});
 });
 
 export default Router;

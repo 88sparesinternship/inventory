@@ -1,0 +1,18 @@
+<form {{action 'addKaryawan' karyawan on='submit'}}>
+    Nama Karyawan : {{input value=karyawan.nama_karyawan}} <br>
+    
+    <button type="submit">add</button>
+</form>
+<table>
+    <tr>
+        <th>Nama karyawan</th>
+        <th>Action</th>
+        
+    </tr>
+    {{#each model as |item|}}
+    <tr>
+        <td>{{item.nama_karyawan}}</td>
+        <td><button {{action 'hapusKaryawan' item.id}}>Delete</button></td>
+    </tr>
+    {{/each}}
+</table>
