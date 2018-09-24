@@ -12,6 +12,7 @@ Router.map(function() {
     this.route('edit',{path: '/edit/:user_id'});
     this.route('borrow');
   });
+  this.route('barang', function() {});
 });
 
 export default Router;
