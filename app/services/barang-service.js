@@ -9,10 +9,17 @@ export default Service.extend({
         return this.get('store').findAll('barang')
     },
     addBarang(barang){
-            let newBarang = this.get('store').createRecord('barang',{
-                nama_barang        : barang.nama_barang,
-                stok               : barang.stok,
-            })
-            return newBarang.save()
-        },
+        let newBarang = this.get('store').createRecord('barang',{
+            nama_barang        : barang.nama_barang,
+            stok               : barang.stok,
+        })
+        return newBarang.save()
+    },
+    deleteBarang(item){
+            this.get('store').findRecord('barang', item.id , { backgroundReload: false }).then(function(del) {
+            del.deleteRecord();
+            del.get('isDeleted');
+            del.save();
+        });
+    },
 });

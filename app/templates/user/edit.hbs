@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand" href="#">Navbar</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -10,20 +9,15 @@
     </ul>
   </div>
 </nav>        
-		
+	<div class="container">	
 		<form style="margin-top: 5%">
-=======
-        <form style="margin-top: 5%">
->>>>>>> 2af68276764a7d42cb52b256c304a4c856753e1b
 		    <center>
 				<div class="form-group">Name : {{input value=model.name size="30" }}</div><br>
 			    <div class="form-group">Value : {{input value=model.value size="30"}}</div><br>
 			    <div>			    	
-<<<<<<< HEAD
-					 {{#link-to 'user.add' tagName='button' class="btn btn-success" }}Edit{{/link-to}}
-=======
-					 <button  class="btn btn-success" {{ action 'editUser' model.id}}> edit</button>
->>>>>>> 2af68276764a7d42cb52b256c304a4c856753e1b
+					 <button {{action "editUser" model.id}} type="submit" class="btn btn-success">Edit</button>
 			    </div>		
 		    </center>    
 		</form>
+
+	</div>	
