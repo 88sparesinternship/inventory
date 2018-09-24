@@ -37,4 +37,5 @@ export default Service.extend({
             edit.save();
         })
     }
+
 });
