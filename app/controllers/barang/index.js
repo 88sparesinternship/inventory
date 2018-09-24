@@ -10,6 +10,9 @@ export default Controller.extend({
     actions :{
         addBarang(barang){
             this.get('barangService').addBarang(barang).then(res => res)
+        },
+        deleteBarang(item){
+            this.get('barangService').deleteBarang(item)
         }
     }
 });
