@@ -1,0 +1,20 @@
+{
+  "name": "inventory",
+  "description": "Small description for inventory goes here",
+  "main": "",
+  "authors": [
+    "\"\""
+  ],
+  "license": "MIT",
+  "homepage": "\"\"",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "moment": "^2.22.2"
+  }
+}

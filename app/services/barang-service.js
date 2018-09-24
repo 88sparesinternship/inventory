@@ -9,17 +9,31 @@ export default Service.extend({
         return this.get('store').findAll('barang')
     },
     addBarang(barang){
-        let newBarang = this.get('store').createRecord('barang',{
-            nama_barang        : barang.nama_barang,
-            stok               : barang.stok,
-        })
-        return newBarang.save()
+            let newBarang = this.get('store').createRecord('barang',{
+                nama_barang        : barang.nama_barang,
+                stok               : barang.stok,
+            })
+            return newBarang.save()
+        },
+
+    lihatKaryawan(){
+        return this.get('store').findAll('karyawan')
     },
-    deleteBarang(item){
-            this.get('store').findRecord('barang', item.id , { backgroundReload: false }).then(function(del) {
+    addKaryawan(karyawan){
+        let newKaryawan = this.get('store').createRecord('karyawan',{
+            nama_karyawan       : karyawan.nama_karyawan,
+            
+        })
+        return newKaryawan.save()
+    
+    },
+    deleteKaryawan(id){
+        this.get('store').findRecord('karyawan', id).then(function(del){
             del.deleteRecord();
             del.get('isDeleted');
+
             del.save();
-        });
+        })
     },
+   
 });
