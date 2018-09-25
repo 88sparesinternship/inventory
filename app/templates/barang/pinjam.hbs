@@ -1,0 +1,19 @@
+<table>
+    <tr>
+        <th>Nama Barang</th>
+        <th>Stok</th>
+        <th>Tanggal Masuka</th>
+        <th>Action</th>
+    </tr>
+    {{#each model as |item|}}
+    <tr>
+        <td>{{item.nama_barang}}</td>
+        <td>{{item.stok}}</td>
+        <td>{{item.created}}</td>
+        <td>
+        	{{#link-to 'barang.inputpinjam'  tagName='button' class="btn btn-warning" }}Pinjam{{/link-to}}
+        	
+        </td>
+    </tr>
+    {{/each}}
+</table>

@@ -10,6 +10,7 @@ export default Controller.extend({
     },
     actions : {
         addBarang(barang){
+<<<<<<< HEAD
             this.get('barangService').addBarang(barang).then(res => res),
             this.set('barang', {})
         },
@@ -18,6 +19,12 @@ export default Controller.extend({
         },
         updateBarang(item){
             this.get('barangService').updateBarang(item)
+=======
+            this.get('barangService').addBarang(barang).then(res => res)
+        },
+        deleteBarang(item){
+            this.get('barangService').deleteBarang(item)
+>>>>>>> 976de373a67bb297030418322605119a7a2cea00
         }
     }
 });

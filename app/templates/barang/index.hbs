@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 <form{{action 'addBarang' barang on='submit'}} >
     nama barang : {{input value = barang.nama_barang}} <br>
@@ -10,6 +11,18 @@
         <th>stok</th>
         <th>created</th>
         <th>action</th>
+=======
+<form {{action 'addBarang' barang on='submit'}}>
+    nama barang : {{input required=true value=barang.nama_barang}} <br>
+    stok : {{input required=true value=barang.stok}}
+    <button type="submit">add</button>
+</form>
+<table>
+    <tr>
+        <th>Nama Barang</th>
+        <th>Stok</th>
+        <th>Action</th>
+>>>>>>> 976de373a67bb297030418322605119a7a2cea00
     </tr>
     {{#each model as |item|}}
     <tr>

@@ -1,0 +1,12 @@
+<div class="container">	
+	<h1>Pinjam Barang</h1>
+	<form>
+			<div class="form-group">Barang : {{input class="form-control" value=model.nama_barang size="30" }}</div>
+		    <div class="form-group">Stok : {{input class="form-control" value=model.stok size="30"}}</div>
+		    <div class="form-group">Tanggal Pinjam : {{input class="form-control" value=model.tgl_pinjam type="date" size="30"}}</div>	
+		    <button {{action "addPinjam" model.id  type="submit" }} class="btn btn-primary">
+		    	Pinjam
+		    </button>
+		    {{#link-to 'barang.pinjam' class="btn btn-danger"}}Batal{{/link-to}}
+	</form>
+</div>
