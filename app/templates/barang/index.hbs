@@ -13,7 +13,11 @@
     <tr>
         <td>{{item.nama_barang}}</td>
         <td>{{item.stok}}</td>
-        
+        <td>
+            <button {{action "deleteBarang" item}} class="btn  btn-danger">
+                Delete
+            </button>
+        </td>
     </tr>
     {{/each}}
 </table>
