@@ -9,15 +9,24 @@
     </ul>
   </div>
 </nav>        
-	<div class="container">	
-		<form style="margin-top: 5%">
-		    <center>
-				<div class="form-group">Name : {{input value=model.name size="30" }}</div><br>
-			    <div class="form-group">Value : {{input value=model.value size="30"}}</div><br>
-			    <div>			    	
-					 <button {{action "editUser" model.id}} type="submit" class="btn btn-success">Edit</button>
-			    </div>		
-		    </center>    
-		</form>
 
-	</div>	
+<div class="container">
+	<table>
+		<tr>
+			<th>name</th>
+			<th>value</th>
+			<th>date created</th>
+			<th>action</th>
+		</tr>
+			{{#each model as |item|}}					
+				<tr>
+					<td>{{item.name}}</td>
+					<td>{{item.value}}</td>
+					<td>{{format-date item.created}} </td>
+					<td>
+						{{#link-to "borrowing" tagName="button" class="btn btn-success"}}{{/link-to}}
+					</td>
+				</tr>
+			{{/each}}
+	</table>
+</div>
