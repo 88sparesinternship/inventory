@@ -14,7 +14,8 @@ export default Service.extend({
         let newBarang = this.get('store').createRecord('barang',{
             nama_barang        : barang.nama_barang,
             stok               : barang.stok,
-            deleted            : null
+            deleted            : null,
+            updated            : null
         })
         return newBarang.save()
         
@@ -25,17 +26,16 @@ export default Service.extend({
             del.save();
         });
     },
-
-    updateBarang(item){
-        var nama_barang = this.get('barang.nama_barang');
-        var stok = this.get('barang.stok');
-
-        this.get('store').findRecord('barang' ,item.id).then(function(edit) {
-            edit.set('nama_barang',nama_barang);
-            edit.set('stok', stok);
+    
+    updateBarang(id){
+        this.get('store').findRecord('barang' , id ).then(function(edit) {
+            edit.set('updated', new Date());
 
             edit.save();
         })
+    },
+    cancel(){
+        this.get('store').rollbackAttributes()
     }
 
 });

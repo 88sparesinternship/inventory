@@ -8,6 +8,8 @@ export default Controller.extend({
 			this.store.findRecord('barang', id).then(function(edit){
 				edit.save();
 			})
+			this.transitionToRoute('barang.pinjam');
+
 		}	
 	}
 });
