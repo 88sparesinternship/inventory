@@ -1,18 +1,38 @@
+<<<<<<< HEAD
+
+<form{{action 'addBarang' barang on='submit'}} >
+    nama barang : {{input value = barang.nama_barang}} <br>
+    stok : {{input value = barang.stok}}
+    <button type="submit">Add</button>
+</form>
+<table>
+    <tr>
+        <th>nama barang</th>
+        <th>stok</th>
+        <th>created</th>
+        <th>action</th>
+=======
 <form {{action 'addBarang' barang on='submit'}}>
-    nama barang : {{input value=barang.nama_barang}} <br>
-    stok : {{input value=barang.stok}}
+    nama barang : {{input required=true value=barang.nama_barang}} <br>
+    stok : {{input required=true value=barang.stok}}
     <button type="submit">add</button>
 </form>
 <table>
     <tr>
         <th>Nama Barang</th>
         <th>Stok</th>
+        <th>Action</th>
+>>>>>>> 976de373a67bb297030418322605119a7a2cea00
     </tr>
     {{#each model as |item|}}
     <tr>
-        <td>{{item.nama_barang}}</td>
-        <td>{{item.stok}}</td>
-        
+        <td>{{item.nama_barang}} </td>
+        <td>{{item.stok}} </td>
+        <td>{{format-date item.created}} </td>
+        <td>
+            <button class="btn btn-danger" {{action 'deleteBarang' item}} >Delete</button>
+            <button class="btn btn-warning" {{action 'updateBarang' item}} >Update</button>
+        </td>
     </tr>
     {{/each}}
 </table>

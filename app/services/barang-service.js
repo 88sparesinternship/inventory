@@ -6,34 +6,36 @@ export default Service.extend({
         if(id){
             return this.get('store').findRecord('barang', id)
         }
-        return this.get('store').findAll('barang')
+        // this.get('store').query('barang',{filter : {deleted : null}}).then(res => {console.log(res)});
+        // return this.get('store').query('barang', {filter: {nama_barang: 'laptop' }})
+        return this.get('store').query('barang', { orderBy: 'deleted', equalTo: null})
     },
     addBarang(barang){
-            let newBarang = this.get('store').createRecord('barang',{
-                nama_barang        : barang.nama_barang,
-                stok               : barang.stok,
-            })
-            return newBarang.save()
-        },
-
-    lihatKaryawan(){
-        return this.get('store').findAll('karyawan')
-    },
-    addKaryawan(karyawan){
-        let newKaryawan = this.get('store').createRecord('karyawan',{
-            nama_karyawan       : karyawan.nama_karyawan,
-            
+        let newBarang = this.get('store').createRecord('barang',{
+            nama_barang        : barang.nama_barang,
+            stok               : barang.stok,
+            deleted            : null
         })
-        return newKaryawan.save()
-    
+        return newBarang.save()
+        
     },
-    deleteKaryawan(id){
-        this.get('store').findRecord('karyawan', id).then(function(del){
-            del.deleteRecord();
-            del.get('isDeleted');
-
+    deleteBarang(item){
+        this.get('store').findRecord('barang', item.id ).then(function(del) {
+            del.set('deleted', new Date());
             del.save();
-        })
+        });
     },
-   
+
+    updateBarang(item){
+        var nama_barang = this.get('barang.nama_barang');
+        var stok = this.get('barang.stok');
+
+        this.get('store').findRecord('barang' ,item.id).then(function(edit) {
+            edit.set('nama_barang',nama_barang);
+            edit.set('stok', stok);
+
+            edit.save();
+        })
+    }
+
 });
