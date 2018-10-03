@@ -41,8 +41,7 @@ export default Service.extend({
         let tambahkategori = this.get('store').createRecord('kategori',{
             kode_kategori        : kategori.kode_kategori,
             nama_kategori        : kategori.nama_kategori
-            
         })
-        return tambahkategori.save();
+        return tambahkategori.save()
 
 });
