@@ -36,6 +36,13 @@ export default Service.extend({
 
             edit.save();
         })
-    }
+    },
+    addKategori(kategori){
+        let tambahkategori = this.get('store').createRecord('kategori',{
+            kode_kategori        : kategori.kode_kategori,
+            nama_kategori        : kategori.nama_kategori
+            
+        })
+        return tambahkategori.save();
 
 });
