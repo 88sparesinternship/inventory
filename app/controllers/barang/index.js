@@ -10,8 +10,7 @@ export default Controller.extend({
     },
     actions : {
         addBarang(barang){
-
-            this.get('barangService').addBarang(barang).then(res => res),
+            this.get('barangService').addBarang(barang)
             this.set('barang', {})
         },
         deleteBarang(item){

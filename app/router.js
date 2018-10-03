@@ -11,11 +11,12 @@ Router.map(function() {
   this.route('barang', function() {
     this.route('pinjam');
     this.route('inputpinjam');
-    this.route('edit', {path: '/edit/:barang_id'});
+    this.route('edit',{path: '/edit/:barang_id'});
   });
 
   this.route('karyawan', function() {
     this.route('addkaryawan');
+    this.route('edit',{path: '/edit/:karyawan_id'});
   });
 
 });

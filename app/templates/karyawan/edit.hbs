@@ -1,0 +1,7 @@
+<form>
+    nama karyawan : {{input value=model.nama_karyawan required=true}} <br>
+    <button type="submit" {{action 'updateKaryawan' model.id}} >Update</button>
+    <button {{action 'cancel'}} >cancel</button>
+</form>
+
+
