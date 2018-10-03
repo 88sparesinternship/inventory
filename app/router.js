@@ -13,10 +13,9 @@ Router.map(function() {
   this.route('karyawan', function() {
     this.route('addkaryawan');
   });
-  this.route('barang', function() {});
 
   this.route('kategori', function() {
-    this.route('kategori');
+    this.route('index');
   });
 });
 

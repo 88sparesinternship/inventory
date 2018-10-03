@@ -10,6 +10,11 @@ export default Controller.extend({
     actions : {
         addKategori(kategori){
             this.get('kategoriService').addKategori(kategori).then(res => res)
+            this.set("kategori",{})
+        },
+        hapusKategori(kategori){
+            this.get("kategoriService").hapusKategori(kategori)
+
         }
     }
 });
