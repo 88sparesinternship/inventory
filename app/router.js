@@ -17,6 +17,7 @@ Router.map(function() {
   this.route('kategori', function() {
     this.route('index');
   });
+  this.route('departemen', function() {});
 });
 
 export default Router;
