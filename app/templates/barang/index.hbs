@@ -8,12 +8,25 @@
         <tr style="background-color: white">
             <td>departement</td>
             <td>:</td>
-            <td>{{input }} </td>
+            <td>
+                <select name="" id="">
+                    <option value="">select departement</option>
+                    {{#each departemen as |item|}}
+                        <option value="">{{item.kode_kategori}}</option>
+                    {{/each}}
+                </select>
+            </td>
         </tr>
         <tr>
             <td>kategori</td>
             <td>:</td>
-            <td>{{input }} </td>
+            <td>
+                <select name="" id="">
+                    {{#each departemen as |item|}}
+                        <option value="">{{item.kode_kategori}}</option>
+                    {{/each}}
+                </select>
+            </td>
         </tr>
         <tr style="background-color: white">
             <td colspan="3">
@@ -30,12 +43,12 @@
         <th>updated</th>
         <th>action</th>
     </tr>
-    {{#each model as |item|}}
+    {{#each barang as |item|}}
+
     <tr>
         <td>Inv/dep/kat/{{item.kode_barang}} </td>
         <td>{{item.nama_barang}} </td>
         <td>{{format-date item.created}} </td>
-        {{!--<td>{{format-date item.updated}} </td>--}}
         <td>
             {{#if item.updated}} 
                 {{format-date item.updated}}

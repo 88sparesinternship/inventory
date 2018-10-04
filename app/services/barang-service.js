@@ -15,7 +15,7 @@ export default Service.extend({
             let terbesar = res.get('lastObject')
             let newCode;
 
-            console.log(terbesar.get('kode_barang'))
+            // console.log(terbesar.get('kode_barang'))
             if(terbesar){
                 newCode = parseInt(terbesar.get('kode_barang') + 1)            
             }

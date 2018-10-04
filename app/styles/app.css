@@ -22,3 +22,13 @@ th {
     background-color: #4CAF50;
     color: white;
 }
+
+select {
+    background-color: white;
+    /*border: none;*/
+    width: 50%;
+    height: 100%;
+}
+input {
+    width: 50%;
+}
