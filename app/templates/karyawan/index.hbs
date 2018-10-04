@@ -1,0 +1,27 @@
+<form {{action 'addKaryawan' karyawan on='submit'}}>
+    Nama Karyawan : {{input value=karyawan.nama_karyawan}} <br>
+    
+    <button class="btn btn-success" type="submit">add</button>
+</form>
+<table>
+    <tr>
+        <th>No</th>
+        <th>Nama karyawan</th>
+        <th>Action</th>
+    </tr>
+    {{#each model as |item|}}
+    <tr>
+        <td>{{item.kode_karyawan}} </td>
+        <td>{{item.nama_karyawan}}</td>
+<<<<<<< HEAD:app/templates/karyawan/addkaryawan.hbs
+        <td><button class="btn btn-danger" {{action 'deleteKaryawan' item.id}}>Delete</button></td>
+=======
+        <td>
+            <button {{action 'deleteKaryawan' item.id}}>Delete</button>
+            {{!--<button {{action 'updateKaryawan' item.id}}>Edit</button>--}}
+            {{#link-to 'karyawan.edit' item.id tagName='button' class="btn btn-warning" }}Edit{{/link-to}}
+        </td>
+>>>>>>> 0b9a6f0a107c60ccae1db04faf79ddb09787dc17:app/templates/karyawan/index.hbs
+    </tr>
+    {{/each}}
+</table>

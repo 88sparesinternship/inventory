@@ -11,13 +11,28 @@ export default Service.extend({
         return this.get('store').query('barang', { orderBy: 'deleted', equalTo: null})
     },
     addBarang(barang){
-        let newBarang = this.get('store').createRecord('barang',{
-            nama_barang        : barang.nama_barang,
-            stok               : barang.stok,
-            deleted            : null
+        this.get('store').findAll('barang', {orderBy : 'kode_barang'}).then(res =>{
+            let terbesar = res.get('lastObject')
+            let newCode;
+
+            console.log(terbesar.get('kode_barang'))
+            if(terbesar){
+                newCode = parseInt(terbesar.get('kode_barang') + 1)            
+            }
+            else{
+                newCode = 1
+            }
+
+            let newBarang = this.get('store').createRecord('barang',{
+                nama_barang        : barang.nama_barang,
+                stok               : barang.stok,
+                deleted            : null,
+                updated            : null,
+                kode_barang        : newCode
+            })
+            // console.log(newId)
+            return newBarang.save()
         })
-        return newBarang.save()
-        
     },
     deleteBarang(item){
         this.get('store').findRecord('barang', item.id ).then(function(del) {
@@ -25,19 +40,18 @@ export default Service.extend({
             del.save();
         });
     },
-
-    updateBarang(item){
-        var nama_barang = this.get('barang.nama_barang');
-        var stok = this.get('barang.stok');
-
-        this.get('store').findRecord('barang' ,item.id).then(function(edit) {
-            edit.set('nama_barang',nama_barang);
-            edit.set('stok', stok);
-
+    
+    updateBarang(id){
+        this.get('store').findRecord('barang' , id ).then(function(edit) {
+            edit.set('updated', new Date());
             edit.save();
         })
+<<<<<<< HEAD
     }
 
    
 
+=======
+    },
+>>>>>>> 0b9a6f0a107c60ccae1db04faf79ddb09787dc17
 });
