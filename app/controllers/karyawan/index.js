@@ -15,7 +15,7 @@ export default Controller.extend({
         deleteKaryawan(karyawan){
             this.get('karyawanService').deleteKaryawan(karyawan)
         },
-        updateKaryawan(karyawan){
+        updateKaryawan(){
             this.transitionToRoute('karyawan.edit')
         }
 
