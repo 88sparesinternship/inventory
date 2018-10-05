@@ -9,7 +9,7 @@
             <td>departement</td>
             <td>:</td>
             <td>
-                <select name="" id="">
+                <select name="" id="" required>
                     <option value="">select departement</option>
                     {{#each departemen as |item|}}
                         <option value="">{{item.kode_kategori}}</option>
@@ -21,7 +21,8 @@
             <td>kategori</td>
             <td>:</td>
             <td>
-                <select name="" id="">
+                <select name="" id="" required>
+                    <option value="">select kategori</option>
                     {{#each departemen as |item|}}
                         <option value="">{{item.kode_kategori}}</option>
                     {{/each}}
@@ -37,13 +38,13 @@
 </form>
 <table>
     <tr>
-        <th>no</th>
+        <th>kodebarang</th>
         <th>nama barang</th>
         <th>created</th>
         <th>updated</th>
         <th>action</th>
     </tr>
-    {{#each barang as |item|}}
+    {{#each barangs as |item|}}
 
     <tr>
         <td>Inv/dep/kat/{{item.kode_barang}} </td>

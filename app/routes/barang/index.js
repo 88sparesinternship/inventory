@@ -16,7 +16,7 @@ export default Route.extend({
         })
     },
     setupController(controller,model){
-        console.log(model)
-        controller.set('barang', model.barang)
+        // console.log(model)
+        controller.set('barangs', model.barang)
     }
 });
