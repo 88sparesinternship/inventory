@@ -1,0 +1,6 @@
+<form>
+    nama kategori : {{input value=model.nama_kategori required=true}} <br>
+    <button type="submit" {{action 'updateKategori' model.id}} >Update</button>
+    <button {{action 'cancel'}} >cancel</button>
+</form>
+
