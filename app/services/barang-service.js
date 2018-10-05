@@ -14,8 +14,7 @@ export default Service.extend({
         this.get('store').findAll('barang', {orderBy : 'kode_barang'}).then(res =>{
             let terbesar = res.get('lastObject')
             let newCode;
-
-            // console.log(terbesar.get('kode_barang'))
+            
             if(terbesar){
                 newCode = parseInt(terbesar.get('kode_barang') + 1)            
             }

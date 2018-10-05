@@ -19,6 +19,10 @@ Router.map(function() {
     this.route('edit',{path: '/edit/:karyawan_id'});
   });
 
+  this.route('kategori', function() {
+    this.route('index');
+  });
+  this.route('departemen', function() {});
 });
 
 export default Router;

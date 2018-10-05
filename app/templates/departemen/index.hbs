@@ -1,0 +1,19 @@
+<form {{action 'addDepartemen' departemen on='submit'}}>
+    Nama Departemen : {{input value = departemen.nama_departemen}} <br>
+    <button class="btn btn-success" type="submit">add</button>
+</form>
+<table>
+    <tr>
+        <th>Nama Departemen</th>
+        <th>Action</th>
+        
+    </tr>
+    {{#each model as |item|}}
+    <tr>
+        <td>{{item.nama_departemen}}</td>
+        <td><button class="btn btn-danger" {{action 'hapusDepartemen' item.id}}>Delete</button>
+        <button class="btn btn-warning" {{action 'updateDepartemen' item.id}}>Edit</button></td>
+    
+    </tr>
+    {{/each}}
+</table>

@@ -16,7 +16,7 @@ export default Controller.extend({
         deleteBarang(item){
             this.get('barangService').deleteBarang(item)
         },
-        updateBarang(item){
+        updateBarang(){
             this.transitionToRoute('barang.edit');
         }
     }
