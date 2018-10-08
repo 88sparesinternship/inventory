@@ -22,4 +22,20 @@ export default Service.extend({
             del.save();
         });
     },
+    lihatKaryawan(){
+        return this.get('store').findAll('karyawan')
+    },
+    addKaryawan(karyawan){
+        let newKaryawan = this.get('store').createRecord('karyawan', {
+            nama_karyawan   : karyawan.nama_karyawan,
+        })
+        return newKaryawan.save()
+    },
+    deleteKaryawan(item){
+        this.get('store').findRecord('karyawan', item.id , { backgroundReload: false }).then(function(del) {
+            del.deleteRecord();
+            del.get('isDeleted');
+            del.save();
+        });
+    },
 });

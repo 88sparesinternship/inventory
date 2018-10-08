@@ -1,15 +1,19 @@
 <table>
     <tr>
+        <th>No</th>
         <th>Nama Barang</th>
         <th>Stok</th>
+        <th>Tanggal Masukan</th>
         <th>Action</th>
     </tr>
-    {{#each model as |item|}}
+    {{#each model as |item index|}}
     <tr>
+        <td>{{index}}</td>
         <td>{{item.nama_barang}}</td>
         <td>{{item.stok}}</td>
+        <td>{{format-date item.created}}</td>
         <td>
-        	{{#link-to 'barang.inputpinjam'  tagName='button' class="btn btn-warning" }}Pinjam{{/link-to}}
+        	{{#link-to 'barang.inputpinjam' item tagName='button' class="btn btn-warning" }}Pinjam{{/link-to}}
         	
         </td>
     </tr>

@@ -7,10 +7,15 @@ const Router = EmberRouter.extend({
 });
 
 Router.map(function() {
-  this.route('user', function() {});
+  this.route('user', function() {
+    this.route('add');
+    this.route('borrow');
+    this.route('edit');
+  });
   this.route('barang', function() {
+    this.route('index');
   	this.route('pinjam');
-  	this.route('inputpinjam');
+  	this.route('inputpinjam', {path : '/inputpinjam/:barang_id'});
   });
 
   this.route('karyawan', function() {

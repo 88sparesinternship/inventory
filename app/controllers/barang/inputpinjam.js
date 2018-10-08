@@ -1,13 +1,11 @@
 import Controller from '@ember/controller';
+// import {inject as service} from '@ember/service';
 
 export default Controller.extend({
-	actions: {
-		addPinjam: function(id){
-			var self = this;
-
-			this.store.findRecord('barang', id).then(function(edit){
-				edit.save();
-			})
-		}	
-	}
+	// barangService : service(),
+	// actions: {
+	// 	addPinjam(id){
+	// 		this.get('barangService').addPinjam(id)
+	// 	}	
+	// }
 });

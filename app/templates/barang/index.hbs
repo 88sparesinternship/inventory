@@ -7,12 +7,14 @@
     <tr>
         <th>Nama Barang</th>
         <th>Stok</th>
+        <th>Tanggal Masukan</th>
         <th>Action</th>
     </tr>
     {{#each model as |item|}}
     <tr>
         <td>{{item.nama_barang}}</td>
         <td>{{item.stok}}</td>
+        <td>{{format-date item.created}}</td>
         <td>
             <button {{action "deleteBarang" item}} class="btn  btn-danger">
                 Delete

@@ -12,7 +12,7 @@
     {{#each model as |item|}}
     <tr>
         <td>{{item.nama_karyawan}}</td>
-        <td><button {{action 'deleteKaryawan' item.id}}>Delete</button></td>
+        <td><button {{action 'deleteKaryawan' item}}>Delete</button></td>
     </tr>
     {{/each}}
 </table>
