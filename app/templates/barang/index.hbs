@@ -24,22 +24,6 @@
 </form>
 <table>
     <tr>
-<<<<<<< HEAD
-        <th>Nama Barang</th>
-        <th>Stok</th>
-        <th>Tanggal Masukan</th>
-        <th>Action</th>
-    </tr>
-    {{#each model as |item|}}
-    <tr>
-        <td>{{item.nama_barang}}</td>
-        <td>{{item.stok}}</td>
-        <td>{{format-date item.created}}</td>
-        <td>
-            <button {{action "deleteBarang" item}} class="btn  btn-danger">
-                Delete
-            </button>
-=======
         <th>no</th>
         <th>nama barang</th>
         <th>created</th>
@@ -62,7 +46,6 @@
         <td>
             <button class="btn btn-danger" {{action 'deleteBarang' item}} >Delete</button>
             {{#link-to 'barang.edit' item.id tagName='button' class="btn btn-warning" }}Edit{{/link-to}}
->>>>>>> 3b4e68e4e6b1e41041521324e448136c7efc8d6d
         </td>
     </tr>
     {{/each}}

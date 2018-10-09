@@ -9,11 +9,8 @@ module.exports = function(environment) {
     firebase:{
       apiKey: "AIzaSyC8SVuffWKZhaj1bzR1FSF0l2yjlpJwqPM",
       databaseURL: "https://inventaris-b9af3.firebaseio.com"
-<<<<<<< HEAD
       // apiKey: "AIzaSyBAgiRKmh3I4H68l3lECGYt-20Y8LszPXo",
       // databaseURL: "https://inventaris-1db28.firebaseio.com"
-=======
->>>>>>> 3b4e68e4e6b1e41041521324e448136c7efc8d6d
     },
     EmberENV: {
       FEATURES: {
