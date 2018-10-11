@@ -26,6 +26,7 @@ export default Service.extend({
             let newKaryawan = this.get('store').createRecord('karyawan',{
                 nama_karyawan       : karyawan.nama_karyawan,
                 kode_karyawan       : newCode,
+                kode_departemen     : karyawan.kode_departemen,
             })
             return newKaryawan.save()
         })
