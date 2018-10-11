@@ -22,7 +22,9 @@ Router.map(function() {
   this.route('kategori', function() {
     this.route('index');
   });
-  this.route('departemen', function() {});
+  this.route('departemen', function() {
+    this.route('index');
+  });
 });
 
 export default Router;

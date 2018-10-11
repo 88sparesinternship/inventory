@@ -1,20 +1,17 @@
 <table>
     <tr>
-        <th>No</th>
+        <th>Kode barang</th>
         <th>Nama Barang</th>
-        <th>Stok</th>
         <th>Tanggal Masukan</th>
         <th>Action</th>
     </tr>
-    {{#each model as |item index|}}
+    {{#each model.barang as |barang|}}
     <tr>
-        <td>{{index}}</td>
-        <td>{{item.nama_barang}}</td>
-        <td>{{item.stok}}</td>
-        <td>{{format-date item.created}}</td>
+        <td>Inv/dep/kat/{{barang.kode_barang}} </td>
+        <td>{{barang.nama_barang}}</td>
+        <td>{{format-date barang.created}}</td>
         <td>
         	{{#link-to 'barang.inputpinjam' item tagName='button' class="btn btn-warning" }}Pinjam{{/link-to}}
-        	
         </td>
     </tr>
     {{/each}}
