@@ -36,3 +36,14 @@
     </tr>
     {{/each}}
 </table>
+
+<br><hr><br>
+
+kjdfhdsh
+<select onchange={{action "tekanMasuk" value="target.value"}}>
+    <option disabled selected> ===== </option>
+    {{#each departemens as |item|}}
+    <option value="{{item.nama_departemen}}">{{item.nama_departemen}}</option>
+    {{/each}}
+</select>
+

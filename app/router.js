@@ -23,8 +23,10 @@ Router.map(function() {
     this.route('edit',{path: '/edit/:kategori_id'});
   });
   this.route('departemen', function() {
+    this.route('index');
     this.route('edit', {path : '/edit/:departemen_id'});
   });
+  this.route('pengembalian', function() {});
 });
 
 export default Router;
