@@ -4,6 +4,18 @@ import {inject as service} from '@ember/service';
 export default Controller.extend({
     barangService : service(),
     actions : {
+          selected: function(selected) {
+            console.log(selected)
+            this.set('barang.nama_departemen', selected)
+            
+            console.log(this.get('selected'))
+        },
+        selectedkat: function(selected) {
+            console.log(selected)
+        
+            this.set('barang.nama_kategori',selected)
+            console.log(this.get('selectedkat'))
+        },
         updateBarang(item){
             this.get('barangService').updateBarang(item),
             this.transitionToRoute('barang.index')
