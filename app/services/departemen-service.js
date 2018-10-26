@@ -11,17 +11,34 @@ export default Service.extend({
         return this.get('store').query('departemen', { orderBy: 'deleted', equalTo: null})
     },
     addDepartemen(departemen){
-        let tambahDepartemen = this.get('store').createRecord('departemen',{
-            nama_departemen : departemen.nama_departemen 
+        this.get('store').findAll('departemen' , {orderBy : 'kode_departemen'}).then(res => {
+            let terbesar = res.get('lastObject')
+            let newCode;
+
+            if(terbesar){
+                newCode = parseInt(terbesar.get('kode_departemen') + 1)
+            }
+            else{
+                newCode = 1
+            }
+
+            let tambahDepartemen = this.get('store').createRecord('departemen',{
+                nama_departemen : departemen.nama_departemen ,
+                kode_departemen : newCode
+            })
+            return tambahDepartemen.save();
         })
-        return tambahDepartemen.save();
     },
     hapusDepartemen(id){
-        
         this.get('store').findRecord('departemen', id).then(function(del){
             del.set('deleted' , "Terhapus");
             del.save()
         })
         
+    },
+    updateDepartemen(id){
+        this.get('store').findRecord('departemen', id).then(function(edit){
+            edit.save()
+        })
     }
 });

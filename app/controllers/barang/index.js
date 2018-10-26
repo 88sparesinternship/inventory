@@ -10,6 +10,7 @@ export default Controller.extend({
     },
     actions : {
         addBarang(barang){
+            
             this.get('barangService').addBarang(barang)
             this.set('barang', {})
         },

@@ -9,10 +9,9 @@
             <td>departement</td>
             <td>:</td>
             <td>
-                <select name="" id="" required>
-                    <option value="">select departement</option>
-                    {{#each departemen as |item|}}
-                        <option value="">{{item.kode_kategori}}</option>
+                <select name="role" class="form-control" required value="{{depart.kode_departemen}}">
+                    {{#each departemens as |depart|}}
+                        <option value="{{depart.kode_departemen}}">{{depart.kode_departemen}}</option>
                     {{/each}}
                 </select>
             </td>
@@ -21,10 +20,10 @@
             <td>kategori</td>
             <td>:</td>
             <td>
-                <select name="" id="" required>
+                <select name="" id="" required class="form-control">
                     <option value="">select kategori</option>
-                    {{#each departemen as |item|}}
-                        <option value="">{{item.kode_kategori}}</option>
+                    {{#each kategoris as |kate|}}
+                        <option value="{{kate.kode_kategori}}">{{kate.kode_kategori}}</option>
                     {{/each}}
                 </select>
             </td>
@@ -40,6 +39,7 @@
     <tr>
         <th>kodebarang</th>
         <th>nama barang</th>
+        <th>departement</th>
         <th>created</th>
         <th>updated</th>
         <th>action</th>
@@ -47,9 +47,10 @@
     {{#each barangs as |item|}}
 
     <tr>
-        <td>Inv/dep/kat/{{item.kode_barang}} </td>
+        <td>Inv/{{item.kode_departemen}}/kat/{{item.kode_barang}} </td>
         <td>{{item.nama_barang}} </td>
-        <td>{{format-date item.created}} </td>
+        <td>{{item.kode_departemen}} </td>
+        <td>{{format-date item.created}} </td>        
         <td>
             {{#if item.updated}} 
                 {{format-date item.updated}}
