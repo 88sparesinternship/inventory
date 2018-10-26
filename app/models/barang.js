@@ -18,5 +18,8 @@ export default DS.Model.extend({
         }
     }),
     kode_barang : DS.attr('number'),
+    kode_kategori : DS.attr('number'),
+    nama_departemen : DS.attr('string'),
+    nama_kategori : DS.attr('string'),
 
 });

@@ -8,12 +8,22 @@
         <tr style="background-color: white">
             <td>departement</td>
             <td>:</td>
-            <td>{{input }} </td>
+            <select onchange={{action "selected" value="target.value"}}>
+                {{#each departemens as |item|}}
+                    <option selected hidden>---</option>
+                    <option value="{{item.nama_departemen}}">{{ item.nama_departemen}}</option>
+                {{/each}}
+        </select>  
         </tr>
         <tr>
             <td>kategori</td>
             <td>:</td>
-            <td>{{input }} </td>
+            <select onchange={{action "selectedkat" value="target.value"}}>
+            {{#each kategoris as |item|}}
+            <option selected hidden>---</option>
+            <option value="{{item.nama_kategori}}">{{ item.nama_kategori}}</option>
+        {{/each}}
+        </select> 
         </tr>
         <tr style="background-color: white">
             <td colspan="3">
@@ -30,9 +40,9 @@
         <th>updated</th>
         <th>action</th>
     </tr>
-    {{#each model as |item|}}
+    {{#each barangs as |item|}}
     <tr>
-        <td>Inv/dep/kat/{{item.kode_barang}} </td>
+        <td>{{item.nama_departemen}}/{{item.nama_kategori}}/{{item.kode_barang}} </td>
         <td>{{item.nama_barang}} </td>
         <td>{{format-date item.created}} </td>
         {{!--<td>{{format-date item.updated}} </td>--}}

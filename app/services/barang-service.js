@@ -12,27 +12,29 @@ export default Service.extend({
     },
     addBarang(barang){
         this.get('store').findAll('barang', {orderBy : 'kode_barang'}).then(res =>{
+            
             let terbesar = res.get('lastObject')
             let newCode;
 
-            (terbesar.get('kode_barang'))
             if(terbesar){
-                newCode = parseInt(terbesar.get('kode_barang') + 1)            
+                newCode = parseInt(terbesar.get('kode_barang') + 1)
             }
             else{
                 newCode = 1
             }
-
-            let newBarang = this.get('store').createRecord('barang',{
+ 
+            let newbarang = this.get('store').createRecord('barang',{
                 nama_barang        : barang.nama_barang,
-                stok               : barang.stok,
+                nama_departemen    : barang.nama_departemen,
+                nama_kategori      : barang.nama_kategori,
+                kode_barang        : newCode,
                 deleted            : null,
                 updated            : null,
-                kode_barang        : newCode
             })
             // console.log(newId)
-            return newBarang.save()
+            return newbarang.save()
         })
+    
     },
     deleteBarang(item){
         this.get('store').findRecord('barang', item.id ).then(function(del) {

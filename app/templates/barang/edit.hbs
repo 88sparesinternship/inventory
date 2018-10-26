@@ -1,5 +1,7 @@
 <form>
     nama barang : {{input value=model.nama_barang required=true}} <br>
+    departemen : {{input value=model.nama_departemen required=true}} <br>
+    kategori : {{input value=model.nama_kategori required=true}} <br>
     <button type="submit" {{action 'updateBarang' model.id}} >Update</button>
     <button {{action 'cancel'}} >cancel</button>
 </form>
