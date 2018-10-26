@@ -25,6 +25,7 @@ Router.map(function() {
   this.route('departemen', function() {
     this.route('index');
   });
+  this.route('pengembalian', function() {});
 });
 
 export default Router;

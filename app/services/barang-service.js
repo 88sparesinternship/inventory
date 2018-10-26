@@ -8,7 +8,10 @@ export default Service.extend({
         }
         // this.get('store').query('barang',{filter : {deleted : null}}).then(res => {console.log(res)});
         // return this.get('store').query('barang', {filter: {nama_barang: 'laptop' }})
-        return this.get('store').query('barang', { orderBy: 'deleted', equalTo: null})
+        return this.get('store').query('barang', { 
+            orderBy: 'deleted',
+            equalTo: null
+        })
     },
     addBarang(barang){
         this.get('store').findAll('barang', {orderBy : 'kode_barang'}).then(res =>{
@@ -25,7 +28,6 @@ export default Service.extend({
 
             let newBarang = this.get('store').createRecord('barang',{
                 nama_barang        : barang.nama_barang,
-                stok               : barang.stok,
                 deleted            : null,
                 updated            : null,
                 kode_barang        : newCode
@@ -34,8 +36,8 @@ export default Service.extend({
             return newBarang.save()
         })
     },
-    deleteBarang(item){
-        this.get('store').findRecord('barang', item.id ).then(function(del) {
+    deleteBarang(barang){
+        this.get('store').findRecord('barang', barang.id ).then(function(del) {
             del.set('deleted', new Date());
             del.save();
         });

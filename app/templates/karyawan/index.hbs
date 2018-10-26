@@ -2,10 +2,10 @@
     Nama Karyawan : {{input value=karyawan.nama_karyawan}} <br>
     Departemen : 
 
-    <select >
+    <select>
         {{#each departemens as |item|}}
             <option selected hidden>---</option>
-            <option value="karyawan.kode_departemen">{{ item.nama_departemen}}</option>
+            <option value="karyawan.kode_departemen">{{item.nama_departemen}}</option>
         {{/each}}    
     </select>
     
@@ -21,7 +21,7 @@
     </tr>
     {{#each karyawans as |item|}}
     <tr>
-        <td>{{item.kode_karyawan}} </td>
+        <td>KRW00{{item.kode_karyawan}} </td>
         <td>{{item.kode_departemen}}</td>
         <td>{{item.nama_karyawan}}</td>
         <td>
@@ -32,3 +32,14 @@
     </tr>
     {{/each}}
 </table>
+
+<br><hr><br>
+
+kjdfhdsh
+<select onchange={{action "tekanMasuk" value="target.value"}}>
+    <option disabled selected> ===== </option>
+    {{#each departemens as |item|}}
+    <option value="{{item.nama_departemen}}">{{item.nama_departemen}}</option>
+    {{/each}}
+</select>
+

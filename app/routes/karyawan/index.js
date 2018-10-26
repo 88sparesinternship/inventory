@@ -8,10 +8,10 @@ export default Route.extend({
     model(){
         //di dalam get = nama service kemudian .method 
         // this.get('karyawanService').lihatKaryawan().then(res => res)
-    return RSVP.hash({
-        departemen : this.get('store').findAll('departemen').then(res => res),
-        karyawan : this.get('karyawanService').lihatKaryawan().then(res => res)
-    })
+        return RSVP.hash({
+            departemen : this.get('store').findAll('departemen').then(res => res),
+            karyawan : this.get('karyawanService').lihatKaryawan().then(res => res)
+        })
     },
 
     setupController(controller, model){

@@ -1,29 +1,245 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">Inventory</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        {{#link-to "barang.index" class="nav-link"}}Add barang{{/link-to}}
-      </li>
-      <li class="nav-item">
-        {{#link-to "karyawan.index" class="nav-link"}}Add Karyawan{{/link-to}}
-      </li>
-      <li class="nav-item">
-        {{#link-to 'kategori.index' class="nav-link"}}kategori{{/link-to}}
-      </li>
-      <li class="nav-item">
-        {{#link-to 'departemen.index' class="nav-link"}}Departemen{{/link-to}}
-      </li>
-      <li class="nav-item">
-        {{#link-to 'barang.pinjam' class="nav-link"}}Pinjam Barang{{/link-to}}
-      </li>
-     
-    </ul>
-  </div>
-</nav>
-<div class="container">
-    {{outlet}} 
+<link rel="stylesheet" href="../vendor/simple-line-icons/css/simple-line-icons.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+<link rel="stylesheet" href="../assets/css/styles.css">
+
+<body class="sidebar-fixed header-fixed">
+<div class="page-wrapper">
+    <nav class="navbar page-header">
+        <a href="#" class="btn btn-link sidebar-mobile-toggle d-md-none mr-auto">
+            <i class="fa fa-bars"></i>
+        </a>
+
+        <a class="navbar-brand" href="#">
+            <img src="../assets/imgs/spares.png" style="width: 7rem;" alt="logo">
+        </a>
+
+        <a href="#" class="btn btn-link sidebar-toggle d-md-down-none">
+            <i class="fa fa-bars"></i>
+        </a>
+    </nav>   
+
+    <div class="main-container">
+        <div class="sidebar">
+            <nav class="sidebar-nav">
+                <ul class="nav">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link active">
+                            <i class="icon icon-speedometer"></i> Dashboard
+                        </a>
+                    </li>
+
+                    <li class="nav-item nav-dropdown">
+                        <a href="#" class="nav-link nav-dropdown-toggle">
+                            <i class="fa fa-building"></i> Departemen <i class="fa fa-caret-left"></i>
+                        </a>
+
+                        <ul class="nav-dropdown-items">
+                            <li class="nav-item">
+                                {{#link-to 'departemen.index' class="nav-link"}}
+                                <i class="fa fa-building"></i>Form Departemen
+                                {{/link-to}}
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item nav-dropdown">
+                        <a href="#" class="nav-link nav-dropdown-toggle">
+                            <i class="fa fa-atlas"></i> Kategori <i class="fa fa-caret-left"></i>
+                        </a>
+
+                        <ul class="nav-dropdown-items">
+                            <li class="nav-item">
+                                {{#link-to 'kategori.index' class="nav-link"}}
+                                <i class="fa fa-atlas"></i>Form Kategori
+                                {{/link-to}}
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item nav-dropdown">
+                        <a href="#" class="nav-link nav-dropdown-toggle">
+                            <i class="fa fa-archive"></i> Barang <i class="fa fa-caret-left"></i>
+                        </a>
+
+                        <ul class="nav-dropdown-items">
+                            <li class="nav-item">
+                                {{#link-to 'barang.index' class="nav-link"}}
+                                <i class="fa fa-archive"></i> Input Barang
+                                {{/link-to}}
+                            </li>
+
+                            <li class="nav-item">
+                                {{#link-to 'barang.index' class="nav-link"}}
+                                <i class="fa fa-archive"></i> Laporan Barang
+                                {{/link-to}}
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item nav-dropdown">
+                        <a href="#" class="nav-link nav-dropdown-toggle">
+                            <i class="fa fa-shopping-bag"></i> Pinjam <i class="fa fa-caret-left"></i>
+                        </a>
+
+                        <ul class="nav-dropdown-items">
+                            <li class="nav-item">
+                                {{#link-to 'barang.pinjam' class="nav-link"}}
+                                <i class="fa fa-shopping-bag"></i> Form Peminjaman
+                                {{/link-to}}
+                            </li>
+
+                            <li class="nav-item">
+                                {{#link-to 'barang.pinjam' class="nav-link"}}
+                                <i class="fa fa-shopping-bag"></i>Laporan Peminjaman
+                                {{/link-to}}
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item nav-dropdown">
+                        <a href="#" class="nav-link nav-dropdown-toggle">
+                            <i class="fa fa-shopping-bag"></i> Pengembalian <i class="fa fa-caret-left"></i>
+                        </a>
+
+                        <ul class="nav-dropdown-items">
+                            <li class="nav-item">
+                                {{#link-to 'pengembalian.index' class="nav-link"}}
+                                <i class="fa fa-shopping-bag"></i>Laporan Pengembalian
+                                {{/link-to}}
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item nav-dropdown">
+                        <a href="#" class="nav-link nav-dropdown-toggle">
+                            <i class="fa fa-user"></i> Karyawan <i class="fa fa-caret-left"></i>
+                        </a>
+
+                        <ul class="nav-dropdown-items">
+                            <li class="nav-item">
+                                {{#link-to 'karyawan.index' class="nav-link"}}
+                                <i class="fa fa-user"></i>Form Karyawan
+                                {{/link-to}}
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="blank.html" class="nav-link">
+                            <i class="fa fa-sign-out-alt"></i> Logout
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="content">
+          {{outlet}}
+            <!-- <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="card p-4">
+                            <div class="card-body d-flex justify-content-between align-items-center">
+                                <div>
+                                    <span class="h4 d-block font-weight-normal mb-2">54</span>
+                                    <span class="font-weight-light">Total Users</span>
+                                </div>
+
+                                <div class="h2 text-muted">
+                                    <i class="icon icon-people"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="card p-4">
+                            <div class="card-body d-flex justify-content-between align-items-center">
+                                <div>
+                                    <span class="h4 d-block font-weight-normal mb-2">$32,400</span>
+                                    <span class="font-weight-light">Income</span>
+                                </div>
+
+                                <div class="h2 text-muted">
+                                    <i class="icon icon-wallet"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="card p-4">
+                            <div class="card-body d-flex justify-content-between align-items-center">
+                                <div>
+                                    <span class="h4 d-block font-weight-normal mb-2">900</span>
+                                    <span class="font-weight-light">Downloads</span>
+                                </div>
+
+                                <div class="h2 text-muted">
+                                    <i class="icon icon-cloud-download"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="card p-4">
+                            <div class="card-body d-flex justify-content-between align-items-center">
+                                <div>
+                                    <span class="h4 d-block font-weight-normal mb-2">32s</span>
+                                    <span class="font-weight-light">Time</span>
+                                </div>
+
+                                <div class="h2 text-muted">
+                                    <i class="icon icon-clock"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row ">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header">
+                                Total Users
+                            </div>
+
+                            <div class="card-body p-0">
+                                <div class="p-4">
+                                    <canvas id="line-chart" width="100%" height="20"></canvas>
+                                </div>
+
+                                <div class="justify-content-around mt-4 p-4 bg-light d-flex border-top d-md-down-none">
+                                    <div class="text-center">
+                                        <div class="text-muted small">Total Traffic</div>
+                                        <div>12,457 Users (40%)</div>
+                                    </div>
+
+                                    <div class="text-center">
+                                        <div class="text-muted small">Banned Users</div>
+                                        <div>95,333 Users (5%)</div>
+                                    </div>
+
+                                    <div class="text-center">
+                                        <div class="text-muted small">Page Views</div>
+                                        <div>957,565 Pages (50%)</div>
+                                    </div>
+
+                                    <div class="text-center">
+                                        <div class="text-muted small">Total Downloads</div>
+                                        <div>957,565 Files (100 TB)</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+    </div>
 </div>
+<script src="../assets/vendor/jquery/jquery.min.js"></script>
+<script src="../assets/vendor/popper.js/popper.min.js"></script>
+<script src="../assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+<script src="../assets/vendor/chart.js/chart.min.js"></script>
+<script src="../assets/js/carbon.js"></script>
+<script src="../assets/js/demo.js"></script>
+</body>

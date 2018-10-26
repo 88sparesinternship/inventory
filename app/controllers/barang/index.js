@@ -13,8 +13,8 @@ export default Controller.extend({
             this.get('barangService').addBarang(barang)
             this.set('barang', {})
         },
-        deleteBarang(item){
-            this.get('barangService').deleteBarang(item)
+        deleteBarang(barang){
+            this.get('barangService').deleteBarang(barang)
         },
         updateBarang(){
             this.transitionToRoute('barang.edit');

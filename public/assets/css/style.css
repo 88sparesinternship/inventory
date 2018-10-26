@@ -1,0 +1,43 @@
+html{
+	position: relative;
+}
+
+body{
+	margin-bottom: 120px; /*sama kaya tinggi footer*/
+}
+
+.jumbotron img{
+	width: 200px;
+	border-radius: 50% 50% 50% 50%;
+	border: 4px solid #333;	
+}
+
+hr{
+	width: 20%;
+	border-top: 2px solid #333; 
+}
+
+section{
+	min-height: 400px;
+}
+
+.portfolio{
+	background-color: #eee;	
+}
+
+.contact{
+	min-height: 800px;
+}
+
+footer{
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 120px;
+	background-color: #333;
+	padding-top: 30px;
+}
+footer p{
+	color: #aaa;
+	font-size: 1em;
+}
