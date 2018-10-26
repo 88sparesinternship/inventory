@@ -1,0 +1,5 @@
+<form>
+    Nama Departemen : {{input value = model.nama_departemen}} <br>
+    <button class="btn btn-success" {{action 'updateDepartemen' model.id}} >Update</button>
+    {{#link-to 'departemen' class='btn btn-warning' }}Cancel{{/link-to}}
+</form>
