@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+<link rel="stylesheet" href="../assets/css/dataTables.bootstrap.min.css">
 
 <form{{action 'addBarang' barang on='submit'}}>
     <table border="1">
@@ -16,7 +18,6 @@
         {{!-- <tr style="background-color: white">
             <td>departement</td>
             <td>:</td>
-<<<<<<< HEAD
             <td>
                 <select>
                     {{#each model.departemen as |departemen|}}
@@ -24,29 +25,10 @@
                     {{/each}}
                 </select>
             </td>
-=======
-<<<<<<< HEAD
-            <select onchange={{action "selected" value="target.value"}}>
-                {{#each departemens as |item|}}
-                    <option selected hidden>---</option>
-                    <option value="{{item.nama_departemen}}">{{ item.nama_departemen}}</option>
-                {{/each}}
-        </select>  
-=======
-            <td>
-                <select name="role" class="form-control" required value="{{depart.kode_departemen}}">
-                    {{#each departemens as |depart|}}
-                        <option value="{{depart.kode_departemen}}">{{depart.kode_departemen}}</option>
-                    {{/each}}
-                </select>
-            </td>
->>>>>>> 376d234ffb8a8049a1243066bee09f52538a244f
->>>>>>> 66e98ea881a56b3196ba0868ecf817889ca00d80
         </tr>
         <tr>
             <td>kategori</td>
             <td>:</td>
-<<<<<<< HEAD
             <td>
                 <select>
                     {{#each model.kategori as |kategori|}}
@@ -54,26 +36,6 @@
                     {{/each}}
                 </select> </td>
         </tr> --}}
-=======
-<<<<<<< HEAD
-            <select onchange={{action "selectedkat" value="target.value"}}>
-            {{#each kategoris as |item|}}
-            <option selected hidden>---</option>
-            <option value="{{item.nama_kategori}}">{{ item.nama_kategori}}</option>
-        {{/each}}
-        </select> 
-=======
-            <td>
-                <select name="" id="" required class="form-control">
-                    <option value="">select kategori</option>
-                    {{#each kategoris as |kate|}}
-                        <option value="{{kate.kode_kategori}}">{{kate.kode_kategori}}</option>
-                    {{/each}}
-                </select>
-            </td>
->>>>>>> 376d234ffb8a8049a1243066bee09f52538a244f
-        </tr>
->>>>>>> 66e98ea881a56b3196ba0868ecf817889ca00d80
         <tr style="background-color: white">
             <td colspan="3">
                 <button type="submit">Add</button>
@@ -84,35 +46,20 @@
 <table class="table table-striped table-bordered table-hovered" id="barangg">
     <thead>
     <tr>
-<<<<<<< HEAD
         <th>Kode Barang</th>
-=======
-        <th>kodebarang</th>
->>>>>>> 66e98ea881a56b3196ba0868ecf817889ca00d80
         <th>nama barang</th>
-        <th>departement</th>
         <th>created</th>
         <th>updated</th>
         <th>action</th>
     </tr>
-<<<<<<< HEAD
     </thead>
     <tbody>
     {{#each model as |item|}}
-=======
-    {{#each barangs as |item|}}
-<<<<<<< HEAD
     <tr>
-        <td>{{item.nama_departemen}}/{{item.nama_kategori}}/{{item.kode_barang}} </td>
-=======
-
->>>>>>> 66e98ea881a56b3196ba0868ecf817889ca00d80
-    <tr>
-        <td>Inv/{{item.kode_departemen}}/kat/{{item.kode_barang}} </td>
->>>>>>> 376d234ffb8a8049a1243066bee09f52538a244f
+        <td>Inv/dep/kat/{{item.kode_barang}} </td>
         <td>{{item.nama_barang}} </td>
-        <td>{{item.kode_departemen}} </td>
-        <td>{{format-date item.created}} </td>        
+        <td>{{format-date item.created}} </td>
+        {{!--<td>{{format-date item.updated}} </td>--}}
         <td>
             {{#if item.updated}} 
                 {{format-date item.updated}}
