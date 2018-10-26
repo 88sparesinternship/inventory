@@ -4,16 +4,19 @@
 </form>
 <table>
     <tr>
+        <th>Kode Departemen</th>
         <th>Nama Departemen</th>
         <th>Action</th>
         
     </tr>
     {{#each model as |item|}}
     <tr>
+        <td>{{item.kode_departemen}} </td>
         <td>{{item.nama_departemen}}</td>
-        <td><button class="btn btn-danger" {{action 'hapusDepartemen' item.id}}>Delete</button>
-        <button class="btn btn-warning" {{action 'updateDepartemen' item.id}}>Edit</button></td>
-    
+        <td>
+            <button class="btn btn-danger" {{action 'hapusDepartemen' item.id}}>Delete</button>
+            {{#link-to 'departemen.edit' item.id class='btn btn-warning'}}Edit{{/link-to}}
+        </td>
     </tr>
     {{/each}}
 </table>

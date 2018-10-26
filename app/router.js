@@ -24,6 +24,7 @@ Router.map(function() {
   });
   this.route('departemen', function() {
     this.route('index');
+    this.route('edit', {path : '/edit/:departemen_id'});
   });
   this.route('pengembalian', function() {});
 });
