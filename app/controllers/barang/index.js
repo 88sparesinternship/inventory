@@ -23,6 +23,7 @@ export default Controller.extend({
             console.log(this.get('selectedkat'))
         },
         addBarang(barang){
+            
             this.get('barangService').addBarang(barang)
             this.set('barang', {})
         },

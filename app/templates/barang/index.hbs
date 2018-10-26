@@ -8,22 +8,43 @@
         <tr style="background-color: white">
             <td>departement</td>
             <td>:</td>
+<<<<<<< HEAD
             <select onchange={{action "selected" value="target.value"}}>
                 {{#each departemens as |item|}}
                     <option selected hidden>---</option>
                     <option value="{{item.nama_departemen}}">{{ item.nama_departemen}}</option>
                 {{/each}}
         </select>  
+=======
+            <td>
+                <select name="role" class="form-control" required value="{{depart.kode_departemen}}">
+                    {{#each departemens as |depart|}}
+                        <option value="{{depart.kode_departemen}}">{{depart.kode_departemen}}</option>
+                    {{/each}}
+                </select>
+            </td>
+>>>>>>> 376d234ffb8a8049a1243066bee09f52538a244f
         </tr>
         <tr>
             <td>kategori</td>
             <td>:</td>
+<<<<<<< HEAD
             <select onchange={{action "selectedkat" value="target.value"}}>
             {{#each kategoris as |item|}}
             <option selected hidden>---</option>
             <option value="{{item.nama_kategori}}">{{ item.nama_kategori}}</option>
         {{/each}}
         </select> 
+=======
+            <td>
+                <select name="" id="" required class="form-control">
+                    <option value="">select kategori</option>
+                    {{#each kategoris as |kate|}}
+                        <option value="{{kate.kode_kategori}}">{{kate.kode_kategori}}</option>
+                    {{/each}}
+                </select>
+            </td>
+>>>>>>> 376d234ffb8a8049a1243066bee09f52538a244f
         </tr>
         <tr style="background-color: white">
             <td colspan="3">
@@ -34,18 +55,25 @@
 </form>
 <table>
     <tr>
-        <th>no</th>
+        <th>kodebarang</th>
         <th>nama barang</th>
+        <th>departement</th>
         <th>created</th>
         <th>updated</th>
         <th>action</th>
     </tr>
     {{#each barangs as |item|}}
+<<<<<<< HEAD
     <tr>
         <td>{{item.nama_departemen}}/{{item.nama_kategori}}/{{item.kode_barang}} </td>
+=======
+
+    <tr>
+        <td>Inv/{{item.kode_departemen}}/kat/{{item.kode_barang}} </td>
+>>>>>>> 376d234ffb8a8049a1243066bee09f52538a244f
         <td>{{item.nama_barang}} </td>
-        <td>{{format-date item.created}} </td>
-        {{!--<td>{{format-date item.updated}} </td>--}}
+        <td>{{item.kode_departemen}} </td>
+        <td>{{format-date item.created}} </td>        
         <td>
             {{#if item.updated}} 
                 {{format-date item.updated}}

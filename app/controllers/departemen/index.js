@@ -8,11 +8,11 @@ export default Controller.extend({
     },
     actions : {
         addDepartemen(departemen){
-            this.get('departemenService').addDepartemen(departemen).then(res => res)
+            this.get('departemenService').addDepartemen(departemen),
+            this.set('departemen',{})
         },
         hapusDepartemen(departemen){
             this.get("departemenService").hapusDepartemen(departemen)
-
         }
     }
 });
