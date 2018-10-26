@@ -8,9 +8,12 @@ export default Service.extend({
         }
         // this.get('store').query('barang',{filter : {deleted : null}}).then(res => {console.log(res)});
         // return this.get('store').query('barang', {filter: {nama_barang: 'laptop' }})
-        return this.get('store').query('barang', { orderBy: 'deleted', equalTo: null})
+        return this.get('store').query('barang', { 
+            orderBy: 'deleted',
+            equalTo: null
+        })
     },
-    addBarang(barang,depart){
+    addBarang(barang){
         // console.log(kodedepartemen)
         let kodedepartemen = this.get('depart.kode_departemen');
         this.get('store').findAll('barang', {orderBy : 'kode_barang'}).then(res =>{
@@ -32,15 +35,15 @@ export default Service.extend({
                 deleted            : null,
                 updated            : null,
                 kode_barang        : newCode,
-                kode_departemen    : kodedepartemen
+               
             })
             
             return newBarang.save()
         })
     
     },
-    deleteBarang(item){
-        this.get('store').findRecord('barang', item.id ).then(function(del) {
+    deleteBarang(barang){
+        this.get('store').findRecord('barang', barang.id ).then(function(del) {
             del.set('deleted', new Date());
             del.save();
         });

@@ -23,5 +23,6 @@ export default DS.Model.extend({
     kode_kategori : DS.attr('number'),
     nama_departemen : DS.attr('string'),
     nama_kategori : DS.attr('string'),
+    kode_departemen : DS.attr('number')
 
 });
