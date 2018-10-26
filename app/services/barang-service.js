@@ -13,14 +13,13 @@ export default Service.extend({
             equalTo: null
         })
     },
-    addBarang(barang,depart){
+    addBarang(barang){
         // console.log(kodedepartemen)
         let kodedepartemen = this.get('depart.kode_departemen');
         this.get('store').findAll('barang', {orderBy : 'kode_barang'}).then(res =>{
             
             let terbesar = res.get('lastObject')
             let newCode;
-
             
             if(terbesar){
                 newCode = parseInt(terbesar.get('kode_barang') + 1)
@@ -36,7 +35,7 @@ export default Service.extend({
                 deleted            : null,
                 updated            : null,
                 kode_barang        : newCode,
-                kode_departemen    : kodedepartemen
+               
             })
             
             return newBarang.save()
