@@ -7,7 +7,6 @@ const Router = EmberRouter.extend({
 });
 
 Router.map(function() {
-  
   this.route('barang', function() {
     this.route('pinjam');
     this.route('inputpinjam');
@@ -21,6 +20,7 @@ Router.map(function() {
 
   this.route('kategori', function() {
     this.route('index');
+    this.route('edit',{path: '/edit/:kategori_id'});
   });
   this.route('departemen', function() {
     this.route('edit', {path : '/edit/:departemen_id'});

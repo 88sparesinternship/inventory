@@ -9,7 +9,7 @@ export default Controller.extend({
     },
     actions : {
         addKategori(kategori){
-            this.get('kategoriService').addKategori(kategori).then(res => res)
+            this.get('kategoriService').addKategori(kategori)
             this.set("kategori",{})
         },
         hapusKategori(kategori){
