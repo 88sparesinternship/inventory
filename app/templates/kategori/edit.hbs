@@ -1,6 +1,11 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
 <form>
-    nama kategori : {{input value=model.nama_kategori required=true}} <br>
-    <button type="submit" {{action 'updateKategori' model.id}} >Update</button>
-    <button {{action 'cancel'}} >cancel</button>
+    <div class="form-group">
+        <label for="">nama kategori :</label>  
+        {{input  class="form-control" value=model.nama_kategori required=true}} <br>
+    </div>
+    <button class="btn btn-warning" type="submit" {{action 'updateKategori' model.id}} >Update</button>
+    <button class="btn btn-danger" {{action 'cancel'}} >cancel</button>
 </form>
 

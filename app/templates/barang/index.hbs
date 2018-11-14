@@ -1,63 +1,74 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+
 <form{{action 'addBarang' barang on='submit'}}>
-    <table>
-        <tr>
-            <td>Nama Barang</td>
-            <td>:</td>
-            <td>{{input value = barang.nama_barang required=true}}</td>
-        </tr>
-        <tr style="background-color: white">
-            <td>departement</td>
-            <td>:</td>
-            <select onchange={{action "selected" value="target.value"}}>
+        <div class="form-group">
+            <label>Nama Barang :</label>
+            {{input value=barang.nama_barang required=true class="form-control"}}
+        </div>   
+        <div class="form-group">
+            <label>departement :</label>
+            <select class="form-control" onchange={{action "selecteddep" value="target.value"}}>
                 {{#each departemens as |item|}}
                     <option selected hidden>---</option>
                     <option value="{{item.nama_departemen}}">{{ item.nama_departemen}}</option>
                 {{/each}}
-        </select>  
-        </tr>
-        <tr>
-            <td>kategori</td>
-            <td>:</td>
-            <select onchange={{action "selectedkat" value="target.value"}}>
+            </select>  
+        </div>
+        <div class="form-group">
+            <label for=""> kategori</label>
+            <select class="form-control" onchange={{action "selectedkat" value="target.value"}}>
             {{#each kategoris as |item|}}
-            <option selected hidden>---</option>
-            <option value="{{item.nama_kategori}}">{{ item.nama_kategori}}</option>
-        {{/each}}
-        </select> 
-        </tr>
-        <tr style="background-color: white">
-            <td colspan="3">
-                <button type="submit">Add</button>
-            </td>
-        </tr>
-    </table>
+                <option selected hidden>---</option>
+                <option value="{{item.nama_kategori}}">{{ item.nama_kategori}}</option>
+            {{/each}}
+            </select> 
+        </div>
+        <button class="btn btn-success" type="submit">Simpan</button>    
 </form>
-<table>
-    <tr>
-        <th>kodebarang</th>
-        <th>nama barang</th>
-        <th>departement</th>
-        <th>created</th>
-        <th>updated</th>
-        <th>action</th>
-    </tr>
-    {{#each barangs as |item|}}
-    <tr>
-        <td>{{item.nama_departemen}}/{{item.nama_kategori}}/{{item.kode_barang}} </td>
-        <td>{{item.nama_barang}} </td>
-        <td>{{item.nama_departemen}} </td>
-        <td>{{format-date item.created}} </td>        
-        <td>
-            {{#if item.updated}} 
-                {{format-date item.updated}}
-            {{else}}
-                -
-            {{/if}}    
-        </td>
-        <td>
-            <button class="btn btn-danger" {{action 'deleteBarang' item}} >Delete</button>
-            {{#link-to 'barang.edit' item.id tagName='button' class="btn btn-warning" }}Edit{{/link-to}}
-        </td>
-    </tr>
-    {{/each}}
-</table>
+<br>
+            {{!-- open table --}}
+            <table id="example" class="table table-striped">
+                <thead class="table-dark">
+                <tr>
+                    <th scope="col">Kode Barang</th>
+                    <th scope="col">Nama Barang</th>
+                    <th scope="col">Departement</th>
+                    <th scope="col">created</th>
+                    <th scope="col">updated</th>
+                    <th scope="col">action</th>
+                </tr>
+                </thead>
+                <tbody>
+                    {{#each barangs as |item|}}
+                    <tr>
+                        <td>{{item.nama_departemen}}/{{item.nama_kategori}}/{{item.kode_barang}} </td>
+                        <td>{{item.nama_barang}} </td>
+                        <td>{{item.nama_departemen}} </td>
+                        <td>{{format-date it
+                            em.created}} </td>        
+                        <td>
+                            {{#if item.updated}} 
+                                {{format-date item.updated}}
+                            {{else}}
+                                -
+                            {{/if}}    
+                        </td>
+                        <td>
+                            <button class="btn btn-danger" {{action 'deleteBarang' item}} >Delete</button>
+                            {{#link-to 'barang.edit' item.id tagName='button' class="btn btn-warning" }}Edit{{/link-to}}
+                        </td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+            {{!-- end table --}}
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $('#example').DataTable();
+    });
+</script>

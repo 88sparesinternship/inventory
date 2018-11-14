@@ -1,6 +1,7 @@
 import Route from '@ember/routing/route';
 import {inject as service} from '@ember/service';
 import RSVP from 'rsvp';
+
 export default Route.extend({
     // barangService : service(),
     // model(){
@@ -18,6 +19,7 @@ export default Route.extend({
             // barang        : this.get('store').findAll('barang', params.id).then(res => res)
             barang        :  this.get('barangService').ambilBarang().then(res => res)
         })
+        // console.log(departemen);
     },
     setupController(controller,model){
         // console.log(model)
