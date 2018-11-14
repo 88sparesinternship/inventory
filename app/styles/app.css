@@ -1,7 +1,6 @@
-body {
+/* body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
-  /*background-image: url("q.png"); ;*/
 }
 
 table {
@@ -25,10 +24,9 @@ th {
 
 select {
     background-color: white;
-    /*border: none;*/
     width: 50%;
     height: 100%;
 }
 input {
     width: 50%;
-}
+} */

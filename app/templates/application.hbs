@@ -4,7 +4,7 @@
 
 <body class="sidebar-fixed header-fixed">
 <div class="page-wrapper">
-    <nav class="navbar page-header">
+    <nav class="navbar page-header" style="background:#BDC3C7;">
         <a href="#" class="btn btn-link sidebar-mobile-toggle d-md-none mr-auto">
             <i class="fa fa-bars"></i>
         </a>
@@ -13,7 +13,7 @@
             <img src="../assets/imgs/spares.png" style="width: 7rem;" alt="logo">
         </a>
 
-        <a href="#" class="btn btn-link sidebar-toggle d-md-down-none">
+        <a href="#" class="btn btn-link sidebar-toggle d-md-down-none" style="text-decoration:none; color:white;">
             <i class="fa fa-bars"></i>
         </a>
     </nav>   
@@ -23,7 +23,7 @@
             <nav class="sidebar-nav">
                 <ul class="nav">
                     <li class="nav-item">
-                        <a href="index.html" class="nav-link active">
+                        <a href="" class="nav-link active">
                             <i class="icon icon-speedometer"></i> Dashboard
                         </a>
                     </li>
@@ -36,7 +36,7 @@
                         <ul class="nav-dropdown-items">
                             <li class="nav-item">
                                 {{#link-to 'departemen.index' class="nav-link"}}
-                                <i class="fa fa-building"></i>Form Departemen
+                                Form Departemen
                                 {{/link-to}}
                             </li>
                         </ul>
@@ -49,7 +49,7 @@
                         <ul class="nav-dropdown-items">
                             <li class="nav-item">
                                 {{#link-to 'kategori.index' class="nav-link"}}
-                                <i class="fa fa-atlas"></i>Form Kategori
+                                Form Kategori
                                 {{/link-to}}
                             </li>
                         </ul>
@@ -62,13 +62,13 @@
                         <ul class="nav-dropdown-items">
                             <li class="nav-item">
                                 {{#link-to 'barang.index' class="nav-link"}}
-                                <i class="fa fa-archive"></i> Input Barang
+                                Input Barang
                                 {{/link-to}}
                             </li>
 
                             <li class="nav-item">
-                                {{#link-to 'barang.index' class="nav-link"}}
-                                <i class="fa fa-archive"></i> Laporan Barang
+                                {{#link-to 'barang.laporanBarang' class="nav-link"}}
+                                Laporan Barang
                                 {{/link-to}}
                             </li>
                         </ul>
@@ -81,28 +81,14 @@
 
                         <ul class="nav-dropdown-items">
                             <li class="nav-item">
-                                {{#link-to 'barang.pinjam' class="nav-link"}}
-                                <i class="fa fa-shopping-bag"></i> Form Peminjaman
+                                {{#link-to 'peminjaman.index' class="nav-link"}}
+                                Form Peminjaman
                                 {{/link-to}}
                             </li>
 
                             <li class="nav-item">
-                                {{#link-to 'barang.pinjam' class="nav-link"}}
-                                <i class="fa fa-shopping-bag"></i>Laporan Peminjaman
-                                {{/link-to}}
-                            </li>
-                        </ul>
-                    </li>
-
-                    <li class="nav-item nav-dropdown">
-                        <a href="#" class="nav-link nav-dropdown-toggle">
-                            <i class="fa fa-shopping-bag"></i> Pengembalian <i class="fa fa-caret-left"></i>
-                        </a>
-
-                        <ul class="nav-dropdown-items">
-                            <li class="nav-item">
-                                {{#link-to 'pengembalian.index' class="nav-link"}}
-                                <i class="fa fa-shopping-bag"></i>Laporan Pengembalian
+                                {{#link-to 'peminjaman.index' class="nav-link"}}
+                                Laporan Peminjaman
                                 {{/link-to}}
                             </li>
                         </ul>
@@ -115,7 +101,7 @@
                         <ul class="nav-dropdown-items">
                             <li class="nav-item">
                                 {{#link-to 'karyawan.index' class="nav-link"}}
-                                <i class="fa fa-user"></i>Form Karyawan
+                                Form Karyawan
                                 {{/link-to}}
                             </li>
                         </ul>

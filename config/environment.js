@@ -8,11 +8,12 @@ module.exports = function(environment) {
     locationType: 'auto',
     firebase:{
       //pauzi
-      apiKey: "AIzaSyBAgiRKmh3I4H68l3lECGYt-20Y8LszPXo",
-      databaseURL: "https://inventaris-1db28.firebaseio.com"
+      // apiKey: "AIzaSyBAgiRKmh3I4H68l3lECGYt-20Y8LszPXo",
+      // databaseURL: "https://inventaris-1db28.firebaseio.com"
 
-      // apiKey: "AIzaSyBGe8GJKzkX99QBbU_lxqec1PdNQMIzeys",
-      // databaseURL: "https://inventaris-2431a.firebaseio.com"
+      //rahbar
+      apiKey: "AIzaSyBGe8GJKzkX99QBbU_lxqec1PdNQMIzeys",
+      databaseURL: "https://inventaris-2431a.firebaseio.com"
       //aju
 
       // apiKey: "AIzaSyC8SVuffWKZhaj1bzR1FSF0l2yjlpJwqPM",

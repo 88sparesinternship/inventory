@@ -1,8 +1,8 @@
 import DS from 'ember-data';
 
 export default DS.Model.extend({
-    id_kategoris    : DS.belongsTo('departemen'),
-    id_departemens : DS.belongsTo('kategori'),
+    // id_kategoris    : DS.belongsTo('departemen'),
+    // id_departemens : DS.belongsTo('kategori'),
     nama_barang : DS.attr('string'),
     created : DS.attr('date',{
         defaultValue : function(){

@@ -10,11 +10,11 @@ export default Controller.extend({
         this.set('barang', {});
     },
     actions : {
-        selected: function(selected) {
+        selecteddep: function(selected) {
             console.log(selected)
             this.set('barang.nama_departemen', selected)
             
-            console.log(this.get('selected'))
+            console.log(this.get('selecteddep'))
         },
         selectedkat: function(selected) {
             console.log(selected)
@@ -23,7 +23,6 @@ export default Controller.extend({
             console.log(this.get('selectedkat'))
         },
         addBarang(barang){
-            
             this.get('barangService').addBarang(barang)
             this.set('barang', {})
         },

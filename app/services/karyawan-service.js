@@ -5,7 +5,7 @@ export default Service.extend({
     
      lihatKaryawan(id){
         if(id){
-            return this.get('store').findRecord('karyawan', id)
+            return this.get('store').findRecord('karyawan')
         }
         // this.get('store').query('barang',{filter : {deleted : null}}).then(res => {console.log(res)});
         // return this.get('store').query('barang', {filter: {nama_barang: 'laptop' }})

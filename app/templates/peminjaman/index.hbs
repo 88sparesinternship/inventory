@@ -1,0 +1,34 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+<table id="example" class="table table-striped">
+                <thead class="table-dark">
+                <tr>
+                    <th scope="col">Kode Barang</th>
+                    <th scope="col">Nama Barang</th>
+                    <th scope="col">Departement</th>
+                    <th scope="col">created</th>
+                    <th scope="col">updated</th>
+                    <th scope="col">action</th>
+                </tr>
+                </thead>
+                <tbody>
+                    {{#each barangs as |item|}}
+                    <tr>
+                        <td>{{item.nama_departemen}}/{{item.nama_kategori}}/{{item.kode_barang}} </td>
+                        <td>{{item.nama_barang}} </td>
+                        <td>{{item.nama_departemen}} </td>
+                        <td>{{format-date item.created}} </td>        
+                        <td>
+                            {{#if item.updated}} 
+                                {{format-date item.updated}}
+                            {{else}}
+                                -
+                            {{/if}}    
+                        </td>
+                        <td>
+                            {{#link-to 'peminjaman.inputPeminjaman' item.id tagName='button' class="btn btn-warning" }}Pinjam{{/link-to}}
+                        </td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>

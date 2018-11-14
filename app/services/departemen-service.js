@@ -16,7 +16,7 @@ export default Service.extend({
             let newCode;
 
             if(terbesar){
-                newCode = parseInt(terbesar.get('kode_departemen') + 1)
+                newCode = parseInt(terbesar.get('kode_departemen') + 1 )
             }
             else{
                 newCode = 1

@@ -4,11 +4,11 @@ import {inject as service} from '@ember/service';
 export default Controller.extend({
     barangService : service(),
     actions : {
-          selected: function(selected) {
+          selecteddep: function(selected) {
             console.log(selected)
             this.set('barang.nama_departemen', selected)
             
-            console.log(this.get('selected'))
+            console.log(this.get('selecteddep'))
         },
         selectedkat: function(selected) {
             console.log(selected)

@@ -1,5 +1,7 @@
-<form>
-    Nama Departemen : {{input value = model.nama_departemen}} <br>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+<form class="form-group">
+    Nama Departemen : {{input value = model.nama_departemen class="form-control"}} <br>
     <button class="btn btn-success" {{action 'updateDepartemen' model.id}} >Update</button>
     {{#link-to 'departemen' class='btn btn-warning' }}Cancel{{/link-to}}
 </form>
